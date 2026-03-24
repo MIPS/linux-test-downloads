@@ -28,10 +28,9 @@ _start:
         sb      t0, 0(a0)
 
         li      t0, 0x01020304
-        addi    sp, sp, -16
-        sw      t0, 0(sp)
-        lbu     t1, 0(sp)
-        addi    sp, sp, 16
+        li      t3, 0x80100000
+        sw      t0, 0(t3)
+        lbu     t1, 0(t3)
 
         li      t2, 0x01
         beq     t1, t2, .Lbig_endian
